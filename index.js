@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const userRoutes = require("./routes/user.route.js");
-// const profileRoutes = require("./routes/profile");
+const profileRoutes = require("./routes/profile.route.js");
 // const courseRoutes = require("./routes/Course");
 // const paymentRoutes = require("./routes/Payments");
 // const contactUsRoute = require("./routes/Contact");
@@ -43,7 +43,7 @@ app.use(
 
 // Setting up routes
 app.use("/api/v1/auth", userRoutes);
-// app.use("/api/v1/profile", profileRoutes);
+app.use("/api/v1/profile", profileRoutes);
 // app.use("/api/v1/course", courseRoutes);
 // app.use("/api/v1/payment", paymentRoutes);
 // app.use("/api/v1/reach", contactUsRoute);
