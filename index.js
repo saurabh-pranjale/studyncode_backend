@@ -3,9 +3,9 @@ const express = require("express");
 const app = express();
 const userRoutes = require("./routes/user.route.js");
 const profileRoutes = require("./routes/profile.route.js");
-// const courseRoutes = require("./routes/Course");
+const courseRoutes = require("./routes/course.route.js");
 // const paymentRoutes = require("./routes/Payments");
-// const contactUsRoute = require("./routes/Contact");
+const contactUsRoute = require("./routes/contact.route.js");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -44,9 +44,9 @@ cloudinaryConnect();
 // Setting up routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
-// app.use("/api/v1/course", courseRoutes);
+app.use("/api/v1/course", courseRoutes);
 // app.use("/api/v1/payment", paymentRoutes);
-// app.use("/api/v1/reach", contactUsRoute);
+app.use("/api/v1/reach", contactUsRoute);
 
 // Testing the server
 app.get("/", (req, res) => {
